@@ -37,7 +37,7 @@ def download_images(posts):
         image_urls = extract_image_urls(post_content)
         downloaded_images = []
         for img_url in image_urls:
-            image_name = download_image(img_url, 'images')
+            image_name = download_image(img_url, 'data/images')
             if image_name:
                 downloaded_images.append(image_name)
         images_info.append({
@@ -49,6 +49,6 @@ def download_images(posts):
         print(postC)
     return images_info
 
-def save_images_info(images_info, filename='images_info.json'):
+def save_images_info(images_info, filename='data/images_info.json'):
     with open(filename, 'w', encoding='utf-8') as file:
         json.dump(images_info, file, ensure_ascii=False, indent=4)
