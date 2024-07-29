@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 # Load blog posts from JSON file
 def load_posts():
-    with open('blog_posts.json', 'r', encoding='utf-8') as file:
+    with open('data/blog_posts.json', 'r', encoding='utf-8') as file:
         posts = json.load(file)
     return posts
 
