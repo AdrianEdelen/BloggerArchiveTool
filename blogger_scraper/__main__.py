@@ -10,8 +10,10 @@ if __name__ == '__main__':
     API_KEY= getenv('API_KEY')
     IMAGE_BASE_URL = getenv('IMAGE_BASE_URL') 
 
+    posts_data = posts.get_all_posts(BLOG_ID, API_KEY)
+    posts.save_posts_to_json(posts=posts_data, filename='data/blog_posts.json')
 
-    with open('blog_posts.json', 'r') as f:
+    with open('data/blog_posts.json', 'r') as f:
         data = json.load(f)
 
     images_info = images.download_images(data)
